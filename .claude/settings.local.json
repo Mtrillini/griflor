@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"C:/xampp/htdocs/gliflor/griflor-argentina-demo/videos\")",
+      "Bash(cp \"C:/Users/martr/Downloads/dfffa47b6e85a837f4114e4dbf49d8a1.mp4\" \"C:/xampp/htdocs/gliflor/griflor-argentina-demo/videos/hero.mp4\")",
+      "Bash(cp \"/c/Users/martr/Downloads/confian.png\" \"/c/xampp/htdocs/gliflor/griflor-argentina-demo/images/confian.png\")",
+      "Bash(cp \"/c/Users/martr/Downloads/ChatGPT Image 19 abr 2026, 11_27_01.png\" \"/c/xampp/htdocs/gliflor/griflor-argentina-demo/images/banner-mid.png\")"
+    ]
+  }
+}
