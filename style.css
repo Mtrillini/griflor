@@ -61,7 +61,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 /* HERO */
 .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden;padding-top:72px;background:var(--cream)}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
-.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(92,82,90,1) 0%,rgba(92,82,90,.4) 8%,rgba(46,38,54,.28) 16%,rgba(46,38,54,.28) 78%,rgba(244,239,230,.6) 92%,rgba(244,239,230,.85) 100%);z-index:1;pointer-events:none}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(92,82,90,1) 0%,rgba(92,82,90,.4) 8%,rgba(46,38,54,.28) 16%,rgba(46,38,54,.28) 78%,rgba(244,239,230,.85) 92%,rgba(244,239,230,1) 100%);z-index:1;pointer-events:none}
 .hero > *:not(.hero-bg):not(.hero-bg-overlay){position:relative;z-index:2}
 
 /* HERO CARTOUCHE */
