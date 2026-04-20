@@ -30,7 +30,8 @@ body{background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;f
 .promo{background:var(--olive);color:rgba(244,239,230,.7);font-size:10px;letter-spacing:.2em;text-transform:uppercase;text-align:center;padding:10px;line-height:1.6}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:var(--mauve-dark);transition:background .4s}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:var(--mauve-dark);transition:background .4s,transform .35s cubic-bezier(0.16,1,0.3,1)}
+nav.nav-hidden{transform:translateY(-100%)}
 .logo-wrap{display:flex;align-items:center}
 .logo-wrap img{height:60px;display:block;object-fit:contain}
 .nav-right{display:flex;align-items:center;gap:24px}

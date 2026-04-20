@@ -201,9 +201,16 @@ document.querySelectorAll(".pcard,.strip-card").forEach(el=>{
 });
 
 // Scroll
+let lastScrollY=0;
+const mainNav=document.getElementById("mainNav");
 window.addEventListener("scroll",()=>{
   const t=document.getElementById("heroTitle");
   if(t&&window.scrollY<window.innerHeight) t.style.transform=`translateY(${window.scrollY*.22}px) scale(${1-window.scrollY*.00022})`;
+  if(window.innerWidth<=900&&mainNav){
+    if(window.scrollY>lastScrollY&&window.scrollY>80) mainNav.classList.add("nav-hidden");
+    else mainNav.classList.remove("nav-hidden");
+    lastScrollY=window.scrollY;
+  }
 });
 
 // Scroll reveal
