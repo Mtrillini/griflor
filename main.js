@@ -137,8 +137,8 @@ function buildGallery(p){
     th.onclick=(e)=>{e.stopPropagation();goImg(i);};
     thumbs.appendChild(th);
   });
-  // Si hay cantidad impar, duplicar la primera para llenar el par vacío
-  if(p.images.length%2!==0){
+  // En desktop (2 slides visibles a la vez), rellenar si cantidad impar
+  if(window.innerWidth>900&&p.images.length%2!==0){
     const filler=document.createElement("div");
     filler.className="gal-slide";
     filler.innerHTML=`<img src="${p.images[0]}" alt="" loading="lazy">`;
@@ -149,7 +149,7 @@ function buildGallery(p){
 
 function updateGallery(){
   const vp=document.getElementById("galArea");
-  const slideW=vp.clientWidth/2;
+  const slideW=window.innerWidth<=900?vp.clientWidth:vp.clientWidth/2;
   const track=document.getElementById("galTrack");
   const n=products[curP].images.length;
   const pos=((curI%n)+n)%n;
@@ -218,6 +218,27 @@ document.querySelectorAll(".strip-card").forEach(c=>{
   });
 });
 
+
+// Strip mobile: activar card centrada al scrollear
+if(window.innerWidth<=900){
+  const stripCards=document.querySelectorAll(".strip-card");
+  const stripEl=document.getElementById("mainStrip");
+  function activateCenteredCard(){
+    const stripCenter=stripEl.getBoundingClientRect().left+stripEl.clientWidth/2;
+    let closest=null,minDist=Infinity;
+    stripCards.forEach(c=>{
+      const r=c.getBoundingClientRect();
+      const dist=Math.abs(r.left+r.width/2-stripCenter);
+      if(dist<minDist){minDist=dist;closest=c;}
+    });
+    if(closest){
+      stripCards.forEach(c=>c.classList.remove("active"));
+      closest.classList.add("active");
+    }
+  }
+  stripEl.addEventListener("scroll",activateCenteredCard,{passive:true});
+  activateCenteredCard();
+}
 
 // Strip drag scroll
 const strip=document.getElementById("mainStrip");

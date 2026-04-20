@@ -276,6 +276,9 @@ footer{background:var(--mauve-dark);padding:56px 40px 0}
   nav{padding:12px 20px}
   .hero-ml,.hero-mr{display:none}
   .pgrid{grid-template-columns:repeat(2,1fr)}
+  .gal-slide{flex:0 0 100%}
+  .strip-card.active{flex-basis:320px}
+  .strip-card .sc-info{opacity:1;transform:translateY(0)}
   .about{grid-template-columns:1fr}
   .trust{grid-template-columns:repeat(2,1fr)}
   .trust-item:nth-child(2){border-right:none}
